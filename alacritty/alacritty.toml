@@ -1,0 +1,21 @@
+import = ["~/.config/alacritty/themes/themes/catppuccin_latte.toml"]
+live_config_reload = true
+
+[font.bold]
+family = "CodeNewRoman Nerd Font"
+style = "Bold"
+
+[font.bold_italic]
+family = "CodeNewRoman Nerd Font"
+style = "Bold Italic"
+
+[font.italic]
+family = "CodeNewRoman Nerd Font"
+style = "Italic"
+
+[font.normal]
+family = "CodeNewRoman Nerd Font"
+style = "Regular"
+
+[font]
+size = 11
