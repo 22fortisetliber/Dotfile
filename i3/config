@@ -67,7 +67,7 @@ set $border-color #434C5E
 
 # Exec always
 # Set Background Image
-exec_always --no-startup-id feh --bg-fill /home/han-pc-sonvt36/Downloads/wal2.jpg
+exec_always --no-startup-id feh --bg-fill https://raw.githubusercontent.com/sonvuthai/Dotfile/refs/heads/main/Francis_Wheatley_-_The_Salmon_Leap%2C_Leixlip_-_Google_Art_Project.jpg
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # Default border style
@@ -112,7 +112,7 @@ bindsym --release Print exec flameshot gui
 # Exit i3 (logs you out of your X session)
 #bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3?' -b 'Yes, exit i3' 'i3-msg exit'"
 mode "(l)ock (s)leep (h)ybernate (r)eboot (p)oweroff (e)xit-i3" {
-        bindsym l exec SDL_VIDEO_FULLSCREEN_HEAD=0  i3lock -t -i /home/han-pc-sonvt36/Pictures/lock.png; mode "default"
+        bindsym l exec SDL_VIDEO_FULLSCREEN_HEAD=0  i3lock -t -i /home/han-pc-sonvt36/Pictures/download.png; mode "default"
         bindsym s exec ~/.config/i3/bin/i3lock.sh && systemctl suspend; mode "default"
         bindsym h exec ~/.config/i3/bin/i3lock.sh && systemctl hibernate; mode "default"
         bindsym p exec systemctl poweroff; mode "default"

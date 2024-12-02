@@ -8,8 +8,8 @@ config.automatically_reload_config = true
 config.window_frame = {
 	font_size = 10,
 	-- Fancy tab bar
-	active_titlebar_bg = '#acbcdc',
-	inactive_titlebar_bg = '#6881a1',
+	active_titlebar_bg = '#5e7351',
+	inactive_titlebar_bg = '#5e7351',
   	inactive_titlebar_fg = '#6881a1',
   	active_titlebar_fg = '#ffffff',
   	inactive_titlebar_border_bottom = '#2b2042',
@@ -24,7 +24,8 @@ fonts.setup(config)
 -- This is where you actually apply your config choices
 
 -- For example, changing the color scheme:
-config.color_scheme = 'Piatto Light'
+config.color_scheme = 'Lunaria Light (Gogh)'
+-- config.color_scheme = 'Catppuccin Latte'
 
 -- Setup tab title
 function contains(str, substr)
@@ -65,7 +66,7 @@ wezterm.on(
     local foreground = '#808080'
 
     if tab.is_active then
-      background = '#2b2042'
+      background = '#800610'
       foreground = '#c0c0c0'
     elseif hover then
       background = '#3b3052'
