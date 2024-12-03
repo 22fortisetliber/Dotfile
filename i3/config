@@ -89,7 +89,7 @@ floating_modifier $mod
 bindsym $mod+Return exec alacritty
 
 # Start a alacritty terminal
-bindsym $mod+Shift+Return exec wezterm
+bindsym $mod+Shift+Return exec kitty
 
 # Kill focused window
 bindsym $mod+Shift+q kill
