@@ -70,8 +70,7 @@ ZSH_THEME="ys"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git; 
-	zsh-autosuggestions)
+plugins=(git; zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -100,13 +99,50 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-# alias python="python3"
-# alias clr="clear"
+alias python="python3"
+alias clr="clear"
+alias lv="lvim"
+alias tmxa="tmux a"
+alias sue="sudo -sE"
+alias tmn="tmux new-session"
+
+# cortex node
+alias lab="ssh -i ~/Documents/VPN/sonvt36.pem root@103.176.146.232"
+alias node1="ssh -J sonvt36@103.160.91.141 root@192.168.30.232"
+alias node2="ssh -J sonvt36@103.160.91.141 root@192.168.30.122"
+alias node3="ssh -J sonvt36@103.160.91.141 root@192.168.30.110"
+alias satt="ssh -J sonvt36@103.160.91.141 root@192.168.30.213"
+alias image-clean-none="docker image ls --filter "dangling=true" -aq | xargs docker rmi -f"
+alias dnd_on="gsettings set org.gnome.desktop.notifications show-banners false"
+alias dnd_off="gsettings set org.gnome.desktop.notifications show-banners true"
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 export PATH=$PATH:/usr/local/go/bin
-export PATH=$PATH:$GOPATH/bin
+export GO_PATH=~/go
+export PATH=$PATH:/$GO_PATH/bin
 
-export PATH=$PATH:/home/chessie/.spicetify
-export PATH="/home/chessie/.local/bin:$PATH"
-export RUST_SRC_PATH="/home/chessie/.cargo/bin"
-#ssh-add ~/.ssh/vuson
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=60'
+
+# Setup position of display monitor
+xrandr --output HDMI-2 --auto --right-of DP-2
+
+# Setup cshell
+# /usr/bin/cshell/launcher
+
+ssh() {
+    if [ "$(ps -p $(ps -p $$ -o ppid=) -o comm=)" = "tmux: server" ]; then
+	  if  [[ $(echo $*) == *"-J"* ]]; then
+	      tmux rename-window "$(echo $* | awk -F'@' '{print $3}') "
+              command ssh "$@"
+              tmux set-window-option automatic-rename "on" 1>/dev/null
+	  else
+              tmux rename-window "$(echo $* | awk -F'@' '{print $2}')"
+              command ssh "$@"
+              tmux set-window-option automatic-rename "on" 1>/dev/null
+          fi
+    else
+        command ssh "$@"
+    fi
+}
