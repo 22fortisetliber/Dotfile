@@ -106,12 +106,6 @@ alias tmxa="tmux a"
 alias sue="sudo -sE"
 alias tmn="tmux new-session"
 
-# cortex node
-alias lab="ssh -i ~/Documents/VPN/sonvt36.pem root@103.176.146.232"
-alias node1="ssh -J sonvt36@103.160.91.141 root@192.168.30.232"
-alias node2="ssh -J sonvt36@103.160.91.141 root@192.168.30.122"
-alias node3="ssh -J sonvt36@103.160.91.141 root@192.168.30.110"
-alias satt="ssh -J sonvt36@103.160.91.141 root@192.168.30.213"
 alias image-clean-none="docker image ls --filter "dangling=true" -aq | xargs docker rmi -f"
 alias dnd_on="gsettings set org.gnome.desktop.notifications show-banners false"
 alias dnd_off="gsettings set org.gnome.desktop.notifications show-banners true"
