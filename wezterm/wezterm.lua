@@ -53,6 +53,8 @@ config.window_frame = {
   active_titlebar_fg = '#575279',
   inactive_titlebar_border_bottom = '#ebe0d6',
   active_titlebar_border_bottom = '#ebe0d6',
+
+  -- config button
   button_fg = '#9893a5',
   button_bg = '#e6e0d8',
   button_hover_fg = '#575279',
