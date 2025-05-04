@@ -18,7 +18,7 @@ function tab_title(tab_info)
 end
 
 function module.setup(config)
-    config.window_frame.font = wezterm.font_with_fallback({"CodeNewRoman Nerd Font Mono", "RobotoMono Nerd Font Mono", "Iosevka Nerd Font"})
+    config.window_frame.font = wezterm.font_with_fallback({"JetBrains Mono"})
     config.window_frame.font_size = 10
     config.window_frame.active_titlebar_bg = config.colors.background
     config.window_frame.inactive_titlebar_bg = config.colors.background
@@ -68,4 +68,3 @@ function module.setup(config)
 end
 
 return module
-
