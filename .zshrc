@@ -116,6 +116,7 @@ export SDKMAN_DIR="$HOME/.sdkman"
 export PATH=$PATH:/usr/local/go/bin
 export GO_PATH=~/go
 export PATH=$PATH:/$GO_PATH/bin
+export PATH="/opt/homebrew/bin:$PATH"
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=60'
 
