@@ -6,35 +6,15 @@ local config = wezterm.config_builder()
 config.enable_tab_bar = true
 config.automatically_reload_config = true
 
--- Window appearance
-config.window_background_opacity = 1.0
--- config.window_decorations = "RESIZE"
-config.enable_tab_bar = true
-config.use_fancy_tab_bar = true
-config.tab_bar_at_bottom = true
-config.hide_tab_bar_if_only_one_tab = false
-
-config.tab_bar_style = {
-  new_tab = wezterm.format {
-    { Foreground = { Color = '#618774' } },
-    { Text = ' + ' },
-  },
-  new_tab_hover = wezterm.format {
-    { Foreground = { Color = '#faf4ed' } },
-    { Background = { Color = '#56949f' } },
-    { Text = ' + ' },
-  },
-}
-
 -- Define our DawnFox theme
 config.color_schemes = {
   ["DawnFox"] = {
     foreground = "#575279",
-    background = "#faf4ed",
+    background = "#f5f5f5",
     cursor_bg = "#d7827e",
     cursor_fg = "#faf4ed",
     cursor_border = "#d7827e",
-    selection_bg = "#9F86C0",
+    selection_bg = "#7aa4a1",
     selection_fg = "#575279",
     
     ansi = {
@@ -60,9 +40,6 @@ config.color_schemes = {
   },
 }
 
-
-
-
 -- Set our custom theme as the default
 config.color_scheme = 'DawnFox'
 
@@ -70,16 +47,16 @@ config.color_scheme = 'DawnFox'
 config.window_frame = {
   font_size = 10,
   -- Fancy tab bar with DawnFox theme
-  active_titlebar_bg = '#f2e9de',
+  active_titlebar_bg = '#2d353e',
   inactive_titlebar_bg = '#f2e9de',
   inactive_titlebar_fg = '#9893a5',
   active_titlebar_fg = '#575279',
   inactive_titlebar_border_bottom = '#ebe0d6',
   active_titlebar_border_bottom = '#ebe0d6',
-  button_fg = '#618774',
-  button_bg = '#f2e9de',
-  button_hover_fg = '#faf4ed',
-  button_hover_bg = '#56949f',
+  button_fg = '#9893a5',
+  button_bg = '#e6e0d8',
+  button_hover_fg = '#575279',
+  button_hover_bg = '#f6c177',
 }
 
 -- Setup font configuration 
@@ -126,15 +103,15 @@ end
 wezterm.on(
   'format-tab-title',
   function(tab, tabs, panes, config, hover, max_width)
-    local edge_background = '#ebe0d6'
-    local background = '#f2e9de'
-    local foreground = '#797593'
+    local edge_background = '#d3d0cb'
+    local background = '#f8f5f0'
+    local foreground = '#747a82'
     
     if tab.is_active then
-      background = '#d7827e' -- Coral for active tab (instead of pink)
+      background = '#5a93aa' -- Coral for active tab (instead of pink)
       foreground = '#faf4ed'
     elseif hover then
-      background = '#f6c177' -- Golden yellow for hover
+      background = '#fda47f' 
       foreground = '#575279'
     end
     
